@@ -48,3 +48,6 @@ print(f"El promedio de {nombre_estudiante} es: {average}")
 print(f"Estado: {status}")
 print("El promedio de todas las notas es: ")
 print("registro guardado")
+
+print("--- ESTO ES UN EXPERIMENTO DE GIT ---")
+print("Si lees esto, estás en la rama de prueba.")
