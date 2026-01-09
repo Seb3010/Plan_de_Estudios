@@ -24,4 +24,4 @@ Este sistema permite realizar las siguientes acciones:
 4.  Sigue las instrucciones del menú en pantalla.
 
 ---
-Hecho con 🐍 por **[SEbastian Partida]**
+Hecho con 🐍 por **Sebastian Partida**
