@@ -1,3 +1,6 @@
+from Estudiantes import Student
+from materias import Materia
+
 def pedir_nombre_estudiante():
     while True:
         nombre = input("Ingrese el nombre del estudiante: ")
@@ -21,6 +24,22 @@ def pedir_nombre_materia():
             break
     return nombre_materia
 
+def pedir_creditos():
+    while True:
+        try:
+            creditos = int(input("Ingrese los créditos de la materia: "))
+            if creditos < 0:
+                print("Por favor, ingrese una cantidad válida de créditos.")
+                continue
+            else:
+                break
+        except ValueError:
+            print("Por favor, ingrese una cantidad válida de créditos.")
+            continue
+        else:
+            break
+    return creditos
+
 def pedir_nota():
     while True:
         try:
@@ -37,10 +56,14 @@ def pedir_nota():
 
 nombre_estudiante = pedir_nombre_estudiante()
 nombre_materia = pedir_nombre_materia()
+creditos = pedir_creditos()
 nota = pedir_nota()
 
 nombre = Student(nombre_estudiante)
-nombre.add_grades(nota, nombre_materia)
+materia = Materia(nombre_materia, creditos)
+materia.calificar(nota)
+nombre.add_grades(materia)
+materia.esta_aprobada()
 average, status = nombre.get_average()
 nombre.keep()
 
@@ -48,6 +71,3 @@ print(f"El promedio de {nombre_estudiante} es: {average}")
 print(f"Estado: {status}")
 print("El promedio de todas las notas es: ")
 print("registro guardado")
-
-print("--- ESTO ES UN EXPERIMENTO DE GIT ---")
-print("Si lees esto, estás en la rama de prueba.")
