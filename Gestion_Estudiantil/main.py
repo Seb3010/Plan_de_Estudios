@@ -1,6 +1,7 @@
 from Estudiantes import Student
 from materias import Materia
 
+
 def pedir_nombre_estudiante():
     while True:
         nombre = input("Ingrese el nombre del estudiante: ")
@@ -55,17 +56,26 @@ def pedir_nota():
     return nota
 
 nombre_estudiante = pedir_nombre_estudiante()
-nombre_materia = pedir_nombre_materia()
-creditos = pedir_creditos()
-nota = pedir_nota()
-
 nombre = Student(nombre_estudiante)
-materia = Materia(nombre_materia, creditos)
-materia.calificar(nota)
-nombre.add_grades(materia)
-materia.esta_aprobada()
+while True:
+    nombre_materia = pedir_nombre_materia()
+    creditos = pedir_creditos()
+    nota = pedir_nota()
+    
+    materia = Materia(nombre_materia, creditos)
+    materia.calificar(nota)
+    nombre.add_grades(materia)
+    materia.esta_aprobada()
+
+    desicion = input("¿desea agregar mas materias?s/n")
+    if desicion == "s":
+        continue
+    else:
+        break
+
 average, status = nombre.get_average()
 nombre.keep()
+materia.keep()
 
 print(f"El promedio de {nombre_estudiante} es: {average}")
 print(f"Estado: {status}")
