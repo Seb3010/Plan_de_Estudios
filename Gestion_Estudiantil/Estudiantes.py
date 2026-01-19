@@ -7,23 +7,28 @@ class Student:
         self.grades.append(Materias)
     
     def get_average(self):
-        try:
-            if not self.grades:
-                return (0, "sin materias")
+        if not self.grades:
+            return (0, "sin materias")
 
-            suma_total = 0
-            for i in self.grades:
-                suma_total += i.nota
+        suma_ponderada = 0
+        total_creditos = 0
+        
+        for materia in self.grades:
+            if materia.nota is not None:
+                suma_ponderada += materia.nota * materia.creditos
+                total_creditos += materia.creditos
+        
+        if total_creditos == 0:
+            return (0, "sin creditos")
 
-            average = suma_total / len(self.grades)
+        average = suma_ponderada / total_creditos
 
-            if average >= 6:
-                status = "aprobado"
-            else:
-                status = "reprobado"
-            return (average, status)
-        except ZeroDivisionError:
-            return (0, "sin calificacion")
+        if average >= 6:
+            status = "aprobado"
+        else:
+            status = "reprobado"
+            
+        return (average, status)
 
     def aprobados(self):
         return [i for i in self.grades if i.nota >= 6]
