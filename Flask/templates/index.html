@@ -6,7 +6,17 @@
 </head>
 <body>
     <h1>¡Hola desde HTML! 🎨</h1>
-    <p>Ahora mi diseño está separado de mi código Python.</p>
+    <p>Hola mi nombre es {{ user }}</p>
+    <p>Ahora mi diseño está separado de mi código {{ lang }}.</p>
     <p>Esto es mucho más profesional.</p>
+    <ul>
+        {%for i in hob %}
+        <li> {{ i }}
+        {% if i == "Programar" %}
+            <strong> - (¡Mi favorito! 💻) </strong>
+        {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

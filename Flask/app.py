@@ -7,7 +7,11 @@ app = Flask(__name__)
 # Esto le dice a Python: "Cuando alguien entre a la página principal ('/'), ejecuta esto"
 @app.route('/')
 def home():
-    return render_template('index.html')
+    nombre = "sebas"
+    lenguaje = "Python"
+    hobies = ["Correr", "Leer", "Programar"]
+
+    return render_template('index.html', user=nombre, lang=lenguaje, hob=hobies)
 
 # Arrancamos el servidor
 if __name__ == '__main__':
