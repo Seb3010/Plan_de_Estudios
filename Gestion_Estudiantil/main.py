@@ -1,7 +1,6 @@
 from Estudiantes import Student
 from materias import Materia
 
-
 def pedir_nombre_estudiante():
     while True:
         nombre = input("Ingrese el nombre del estudiante: ")
