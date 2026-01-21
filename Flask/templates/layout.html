@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - Mi Web</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Inicio</a> | <a href="/contacto">Contacto</a>
+    </nav>
+    <hr>
+
+    {# Aquí es donde entrará el contenido de cada página #}
+    {% block content %}
+    {% endblock %}
+
+    <hr>
+    <footer>
+        <a href="mailto:Spartida511@gmail.com">
+            <button>Quejas y sugerencias</button>
+        </a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %} ¡Mensaje Enviado! {% endblock %}
+
+{% block content %}
+    <h1>¡Gracias por escribir, {{ persona }}! 🚀</h1>
+    <p>Hemos recibido tu mensaje correctamente:</p>
+    <blockquote>"{{ texto }}"</blockquote>
+    <a href="/">Volver al inicio</a>
+{% endblock %}

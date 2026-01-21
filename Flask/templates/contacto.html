@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %} Contacto {% endblock %}
+
+{% block content %}
+    <h1>¡Envíame un mensaje! </h1>
+    
+    <form action="/enviar" method="POST">
+        <div>
+            <label>Tu nombre:</label><br>
+            <input type="text" name="usuario" placeholder="Ej. Sebas" required>
+        </div>
+        <br>
+        <div>
+            <label>Mensaje:</label><br>
+            <textarea name="mensaje" placeholder="Escribe algo..." required></textarea>
+        </div>
+        <br>
+        <button type="submit">Enviar Mensaje</button>
+    </form>
+{% endblock %}

@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Mi Primera Web</title>
-</head>
-<body>
-    <h1>¡Hola desde HTML! 🎨</h1>
+{% extends "layout.html" %}
+
+{% block title %} Inicio {% endblock %}
+
+{% block content %}
+    <h1>¡Hola desde Flask!</h1>
     <p>Hola mi nombre es {{ user }}</p>
-    <p>Ahora mi diseño está separado de mi código {{ lang }}.</p>
-    <p>Esto es mucho más profesional.</p>
+    <p>Aprendiendo {{ lang }}</p>
     <ul>
-        {%for i in hob %}
+        {% for i in hob %}
         <li> {{ i }}
-        {% if i == "Programar" %}
-            <strong> - (¡Mi favorito! 💻) </strong>
-        {% endif %}
+            {% if i == "Programar" %}
+                <strong> - (¡Mi favorito! 💻) </strong>
+            {% endif %}
         </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
