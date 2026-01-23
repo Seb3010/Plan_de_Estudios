@@ -3,8 +3,12 @@
 {% block title %} ¡Mensaje Enviado! {% endblock %}
 
 {% block content %}
-    <h1>¡Gracias por escribir, {{ persona }}! 🚀</h1>
-    <p>Hemos recibido tu mensaje correctamente:</p>
-    <blockquote>"{{ texto }}"</blockquote>
-    <a href="/">Volver al inicio</a>
+    <div class="card">
+        <div class="alert alert-success">
+            <h1>¡Gracias por escribir, {{ persona }}! 🚀</h1>
+            <p>Hemos recibido tu mensaje correctamente:</p>
+            <blockquote>"{{ texto }}"</blockquote>
+        </div>
+        <a class="btn btn-outline" href="/">Volver al inicio</a>
+    </div>
 {% endblock %}

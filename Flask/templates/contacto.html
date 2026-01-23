@@ -3,19 +3,20 @@
 {% block title %} Contacto {% endblock %}
 
 {% block content %}
-    <h1>¡Envíame un mensaje! </h1>
-    
-    <form action="/enviar" method="POST">
-        <div>
-            <label>Tu nombre:</label><br>
-            <input type="text" name="usuario" placeholder="Ej. Sebas">
-        </div>
-        <br>
-        <div>
-            <label>Mensaje:</label><br>
-            <textarea name="mensaje" placeholder="Escribe algo..."></textarea>
-        </div>
-        <br>
-        <button type="submit">Enviar Mensaje</button>
-    </form>
+    <div class="card">
+        <h1>¡Envíame un mensaje!</h1>
+        <form action="/enviar" method="POST">
+            <div class="form-group">
+                <label for="usuario">Tu nombre:</label>
+                <input id="usuario" class="input" type="text" name="usuario" placeholder="Ej. Sebas">
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" class="input" name="mensaje" placeholder="Escribe algo..."></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Enviar Mensaje</button>
+        </form>
+    </div>
 {% endblock %}

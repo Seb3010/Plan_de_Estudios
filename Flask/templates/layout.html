@@ -2,23 +2,30 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <nav>
-        <a href="/">Inicio</a> |
-        <a href="/contacto">Contacto</a> |
-        <a href="{{ url_for('ver_mensajes') }}">Ver Mensajes (Admin)</a>
-    </nav>
+    <header class="site-header">
+        <nav class="navbar">
+            <a class="nav-link" href="/">Inicio</a>
+            <a class="nav-link" href="/contacto">Contacto</a>
+            <a class="nav-link" href="{{ url_for('ver_mensajes') }}">Ver Mensajes</a>
+        </nav>
+    </header>
 
-    {# Aquí es donde entrará el contenido de cada página #}
-    {% block content %}
-    {% endblock %}
+    <main class="container">
+        {# Aquí es donde entrará el contenido de cada página #}
+        {% block content %}
+        {% endblock %}
+    </main>
 
-    <footer>
-        <a href="mailto:Spartida511@gmail.com">
-            <button>Quejas y sugerencias</button>
-        </a>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <a class="footer-mail" href="mailto:Spartida511@gmail.com">Quejas y sugerencias</a>
+        </div>
     </footer>
 </body>
 </html>

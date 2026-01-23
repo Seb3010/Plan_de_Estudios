@@ -3,23 +3,20 @@
 {% block title %} Iniciar Sesión {% endblock %}
 
 {% block content %}
-<div>
+<div class="card">
     <h2>Admin Login</h2>
-    
     <form action="/login" method="POST">
-        <div>
-            <label>Usuario:</label><br>
-            <input type="text" name="user" required>
+        <div class="form-group">
+            <label for="user">Usuario:</label>
+            <input id="user" class="input" type="text" name="user" required>
         </div>
-        
-        <div>
-            <label>Contraseña:</label><br>
-            <input type="password" name="pass" required>
+
+        <div class="form-group">
+            <label for="pass">Contraseña:</label>
+            <input id="pass" class="input" type="password" name="pass" required>
         </div>
-        
-        <button type="submit">
-            Entrar al Panel
-        </button>
+
+        <button class="btn btn-primary" type="submit">Entrar al Panel</button>
     </form>
 </div>
 {% endblock %}
