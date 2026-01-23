@@ -2,19 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %} - Mi Web</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
     <nav>
-        <a href="/">Inicio</a> | <a href="/contacto">Contacto</a>
+        <a href="/">Inicio</a> |
+        <a href="/contacto">Contacto</a> |
+        <a href="{{ url_for('ver_mensajes') }}">Ver Mensajes (Admin)</a>
     </nav>
-    <hr>
 
     {# Aquí es donde entrará el contenido de cada página #}
     {% block content %}
     {% endblock %}
 
-    <hr>
     <footer>
         <a href="mailto:Spartida511@gmail.com">
             <button>Quejas y sugerencias</button>

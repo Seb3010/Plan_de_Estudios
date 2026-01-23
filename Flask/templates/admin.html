@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %} Panel de Control {% endblock %}
+
+{% block content %}
+    <h1>Mensajes Recibidos </h1>
+    
+    <ul>
+        {% for linea in mensajes %}
+            <li>{{ linea }}</li>
+        {% else %}
+            <p>No hay mensajes que mostrar.</p>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="/">Volver al Inicio</a>
+{% endblock %}
