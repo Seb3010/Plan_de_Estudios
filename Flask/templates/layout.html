@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="Styles/styles.css">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
@@ -12,10 +12,9 @@
         <nav class="navbar">
             <a class="nav-link" href="/">Inicio</a>
             <a class="nav-link" href="/contacto">Contacto</a>
-            <a class="nav-link" href="{{ url_for('ver_mensajes') }}">Ver Mensajes</a>
+            <a class="nav-link" href="/ver_mensajes">Ver Mensajes</a>
         </nav>
     </header>
-
     <main class="container">
         {# Aquí es donde entrará el contenido de cada página #}
         {% block content %}
